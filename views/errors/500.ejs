@@ -1,0 +1,7 @@
+<%- include('../layouts/main', { title }) %>
+<% layout('layouts/main') -%>
+
+<div class="error">
+  <h2>500 - Error del servidor</h2>
+  <pre><%= error && error.stack %></pre>
+</div>

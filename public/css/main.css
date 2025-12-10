@@ -1,0 +1,7 @@
+/* CSS mínimo */
+:root { color-scheme: light dark; }
+body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; margin:0; }
+header { padding:1rem; background:#1f2937; color:#fff; }
+main { padding:1rem; }
+.hero h2 { color:#2563eb; }
+.error { border:1px solid #fca5a5; padding:1rem; border-radius:.5rem; }
