@@ -45,6 +45,17 @@ app.use("/auth", authRouter);
 // Favicon placeholder para evitar 500 si no existe archivo
 app.get("/favicon.ico", (req, res) => res.status(204).end());
 
+// Middleware para garantizar charset utf-8 en render de vistas
+app.use((req, res, next) => {
+  const originalRender = res.render.bind(res);
+  res.render = (view, options = {}, callback) => {
+    res.type("html");
+    res.charset = "utf-8";
+    return originalRender(view, options, callback);
+  };
+  next();
+});
+
 // 404
 app.use((req, res) => {
   res.status(404).render("errors/404", { title: "Página no encontrada" });
