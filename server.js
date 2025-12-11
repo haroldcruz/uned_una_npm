@@ -1,4 +1,4 @@
-// Servidor Express básico para MVC con EJS
+// Servidor Express bÃ¡sico para MVC con EJS
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -19,16 +19,16 @@ app.set("view engine", "ejs");
 // Static
 app.use(express.static(path.join(__dirname, "public")));
 
-// Nota: no forzamos Content-Type globalmente para permitir servir imágenes/CSS correctamente
+// Nota: no forzamos Content-Type globalmente para permitir servir imÃ¡genes/CSS correctamente
 
 // Parseo de cuerpo para forms
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Conexión a MongoDB Atlas
+// ConexiÃ³n a MongoDB Atlas
 const mongoUri = process.env.MONGO_URI;
 if (!mongoUri) {
-  console.warn("MONGO_URI no está definido. Configure la variable de entorno.");
+  console.warn("MONGO_URI no estÃ¡ definido. Configure la variable de entorno.");
 } else {
   mongoose
     .connect(mongoUri)
@@ -58,7 +58,7 @@ app.use((req, res, next) => {
 
 // 404
 app.use((req, res) => {
-  res.status(404).render("errors/404", { title: "Página no encontrada" });
+  res.status(404).render("errors/404", { title: "PÃ¡gina no encontrada" });
 });
 
 // Error handler

@@ -1,7 +1,23 @@
-<%- include('../layouts/main', { title }) %>
-<% layout('layouts/main') -%>
-
-<div class="error">
-  <h2>500 - Error del servidor</h2>
-  <pre><%= error && error.stack %></pre>
-</div>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title || 'Error del servidor' %></title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <header>
+    <h1>Prueba MVC</h1>
+  </header>
+  <main>
+    <div class="error">
+      <h2>500 - Error del servidor</h2>
+      <pre><%= error && error.stack %></pre>
+    </div>
+  </main>
+  <footer>
+    <small>&copy; <%= new Date().getFullYear() %></small>
+  </footer>
+</body>
+</html>

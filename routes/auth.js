@@ -13,7 +13,7 @@ router.post("/login", async (req, res) => {
       return res.status(200).render("home/index", {
         title: "Inicio",
         message: "Usuario no encontrado",
-        error: "Credenciales inv·lidas",
+        error: "Credenciales inv√°lidas",
         email
       });
     }
@@ -22,7 +22,7 @@ router.post("/login", async (req, res) => {
       return res.status(200).render("home/index", {
         title: "Inicio",
         message: "Hola desde MVC con Express + EJS",
-        error: "Credenciales inv·lidas",
+        error: "Credenciales inv√°lidas",
         email
       });
     }

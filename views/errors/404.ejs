@@ -1,7 +1,24 @@
-<%- include('../layouts/main', { title }) %>
-<% layout('layouts/main') -%>
-
-<div class="error">
-  <h2>404 - No encontrado</h2>
-  <p>La p�gina que buscas no existe.</p>
-</div>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= title || 'Página no encontrada' %></title>
+  <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+  <header>
+    <h1>Prueba MVC</h1>
+  </header>
+  <main>
+    <div class="error">
+      <h2>404 - No encontrado</h2>
+      <p>La página que buscas no existe.</p>
+      <a href="/">Volver a la página principal</a>
+    </div>
+  </main>
+  <footer>
+    <small>&copy; <%= new Date().getFullYear() %></small>
+  </footer>
+</body>
+</html>

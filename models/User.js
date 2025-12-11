@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema(
   {
-    // Id se maneja como _id en MongoDB; Mongoose lo gestiona autom·ticamente
+    // Id se maneja como _id en MongoDB; Mongoose lo gestiona autom√°ticamente
     nombre: { type: String, required: true, trim: true, maxlength: 100 },
     email: {
       type: String,

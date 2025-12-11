@@ -2,7 +2,7 @@ import { Router } from "express";
 
 const router = Router();
 
-// Controller simulando lógica
+// Controller simulando lÃ³gica
 const HomeController = {
   index: (req, res) => {
     res.render("home/index", {
