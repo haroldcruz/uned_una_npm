@@ -16,6 +16,7 @@
       <p>Esta vista se renderiza desde el controlador.</p>
     </section>
 
+    <% if (typeof error !== 'undefined' || typeof email !== 'undefined' || message === 'Hola desde MVC con Express + EJS') { %>
     <section class="card" style="max-width:480px">
       <h3>Iniciar sesión</h3>
       <% if (typeof error !== 'undefined' && error) { %>
@@ -35,6 +36,12 @@
       <p style="font-size:.9rem;color:#6b7280">Los datos se verifican contra MongoDB Atlas.</p>
       <p style="font-size:.8rem;color:#6b7280">Configura <code>MONGO_URI</code> en variables de entorno.</p>
     </section>
+    <% } else { %>
+    <section class="card" style="max-width:480px">
+      <p style="text-align:center;color:#10b981;font-size:1.1rem">✓ Sesión iniciada correctamente</p>
+      <p style="text-align:center"><a href="/">Cerrar sesión</a></p>
+    </section>
+    <% } %>
   </main>
   <footer>
     <small>&copy; <%= new Date().getFullYear() %></small>

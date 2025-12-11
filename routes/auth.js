@@ -28,7 +28,7 @@ router.post("/login", async (req, res) => {
     }
     return res.render("home/index", {
       title: "Inicio",
-      message: `Bienvenido, ${user.name || user.email}`,
+      message: `Bienvenido, ${user.nombre || user.email}`,
     });
   } catch (err) {
     console.error(err);
