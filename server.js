@@ -19,11 +19,7 @@ app.set("view engine", "ejs");
 // Static
 app.use(express.static(path.join(__dirname, "public")));
 
-// Forzar charset UTF-8 en respuestas HTML
-app.use((req, res, next) => {
-  res.setHeader("Content-Type", "text/html; charset=utf-8");
-  next();
-});
+// Nota: no forzamos Content-Type globalmente para permitir servir imágenes/CSS correctamente
 
 // Parseo de cuerpo para forms
 app.use(express.urlencoded({ extended: true }));
@@ -45,6 +41,9 @@ import indexRouter from "./routes/index.js";
 app.use("/", indexRouter);
 import authRouter from "./routes/auth.js";
 app.use("/auth", authRouter);
+
+// Favicon placeholder para evitar 500 si no existe archivo
+app.get("/favicon.ico", (req, res) => res.status(204).end());
 
 // 404
 app.use((req, res) => {

@@ -10,18 +10,20 @@ router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(401).render("home/index", {
+      return res.status(200).render("home/index", {
         title: "Inicio",
         message: "Usuario no encontrado",
         error: "Credenciales inválidas",
+        email
       });
     }
     const ok = await bcrypt.compare(password, user.hash || "");
     if (!ok) {
-      return res.status(401).render("home/index", {
+      return res.status(200).render("home/index", {
         title: "Inicio",
         message: "Hola desde MVC con Express + EJS",
         error: "Credenciales inválidas",
+        email
       });
     }
     return res.render("home/index", {
